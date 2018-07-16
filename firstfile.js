@@ -3,7 +3,7 @@
 console.log("Hi, my name is jaouad and I'm 29 years old");
 
 function whoAmI(name, age) {
-    if (!name || age <= 0) {
+    if (!name || age <= 0 || typeof(age) !== "number") {
         throw new Error ("Arguments not valid");
     }
     console.log(`Hi, my name is ${name} and I'm ${age} years old`);
@@ -23,7 +23,7 @@ function yearOfBirth(age) {
 
 try {
     yearOfBirth(40);
-    whoAmI("Burkey", 20);
+    whoAmI("Burkey", '3');
 } catch(e) {
     console.error(e.message);
 }
